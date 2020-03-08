@@ -5,7 +5,7 @@ import os
 # 4 set of bands to simulate (4 subplots)
 b1 = ['900']
 b2 = ['800', '900', '2100']
-b3 = ['800', '900', '2100', '2600']
+b3 = ['800', '900', '1800', '2100']
 b4 = ['800', '900', '1800', '2100', '2600']
 
 # u value used to simplified two-ray model, assuming that two rays are always combined coherently, with a reflection
@@ -13,7 +13,7 @@ b4 = ['800', '900', '1800', '2100', '2600']
 u = 1.6
 
 R = -0.9    # R (or Γ) reflection factor used in two-ray ground-reflection model (in general is
-            # dependent on the angle of incidence)
+          # dependent on the angle of incidence)
 ht = 6      # transmitter height
 hr = 4      # receiver height
 maxd = 25   # Maximum distance from transmitter (m)
@@ -62,7 +62,7 @@ for i, bands in enumerate(bandslist):
 
 
 
-    ax[i].legend((f'Two-Ray ground-reflection\n analytical model (Γ={R})', f'u={u}', 'Free Space (FSPL)'))
+    ax[i].legend((f'Two-Ray ground-reflection\n analytical model (Γ={R})', f'u={u}', 'Free Space (FSPL)'), loc=6)
     bandsstring = ', '.join(freq.astype(str))
     bandsstring = '(' + bandsstring + ')'
     fname = f'ht = {ht}m, hr={hr}m, Γ={R}, u={u}'
